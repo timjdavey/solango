@@ -1,0 +1,79 @@
+.. _code-facet:
+
+=====
+Facet
+=====
+
+Facets are fields upon which Solr may group search results (analogous to a
+SQL "GROUP BY" clause).  Faceting shows users the results of Solr's
+faceting collation in conjunction with a tree-merge strategy implemented
+in this class. 
+
+If you have a tree structure, like a Category, Facet will try
+to represent the tree in the Facet results. **This Feature is not fully tested**
+
+The Facet Object: 
+
+    Iterate the provided DOM Node, parsing the facet name and any child
+    value counts.  Facet values are additionally merged into a tree
+    structure based on common name prefixes, and then flattened out again.
+    This allows for parent-child relationships and nested value counts.
+    See merge_values.
+    
+    Parses the facet counts into this Result's facets list.
+    
+    Takes a parsed xml document.
+
+
+Facets are passed back as part of the search results. Dig into the code
+if you want to see how they work, otherwise here is how to make use of them::
+
+    >>> from solango import connection
+    >>> results = connection.select(q='django')
+    
+    # results.facets is a list of Facet instances
+    >>> results.facets
+    [<solango.solr.facet.Facet object at 0x8a753cc>,
+    <solango.solr.facet.Facet object at 0x8a7550c>]
+    
+    # Each Facet has a list of values
+    >>> facet = results.facets[0]
+    >>> facet.values
+    [<solango.solr.facet.FacetValue object at 0x8a7564c>,
+    <solango.solr.facet.FacetValue object at 0x8a7566c>]
+    
+    # Each value has a name, value and count. Count is the number of
+    # documents returned under that facet
+    >>> value = facet.values[0]
+    >>> value.name
+    u'Entry'
+    >>> value.value
+    u'coltrane__entry'
+    >>> value.count
+    7
+    
+
+To make displaying your facets easy in templates, you can use::
+
+    from solango.utils import get_facets_links
+    facets = get_facets_links(request, results)
+
+This returns a dict which looks something like::
+
+    {
+        'author': {
+            'current': None,
+            'base': '/search/?q=spain',
+            'name': 'author',
+            'links': [{'count': 7,
+                       'active': False,
+                       'href': '/search/?q=spain&subject_facet=Mexico&author_facet="Doe, John"',
+                       'anchor': 'Doe, John',
+                       'level': 0}, #...
+               ]
+        }, #...
+    }
+    
+Take a look at the solango/search.html template for an example of 
+how to template your facets using this dict.
+

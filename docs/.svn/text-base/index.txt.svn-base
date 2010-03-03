@@ -1,0 +1,61 @@
+.. Django Solr documentation master file, created by sphinx-quickstart on Fri Jan 23 10:53:08 2009.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+=========================
+Django Solr Documentation
+=========================
+
+Introduction
+============
+The purpose of this project is to allow developers to quickly integrate Solr search with any Django application. 
+It was originally built for the `The Washington Times <http://www.washingtontimes.com>`_ on Django .91 and has been upgraded to function with Django 1.0. 
+During that process I broke a lot of things, but also made it a lot enhancements. We've tried to document the code 
+to the best of our ability, outlining features and :ref:`things <fixme>` that could be improved. Don't expect perfection. 
+Expect a great starting point that needs to be improved and nurtured. 
+
+We are always looking for ways to improve this project, so for questions or suggestions you can use one of the following tools.
+
+* Log issues in the `Google Code Project <http://code.google.com/p/django-solr-search/issues/list>`_. 
+* Ask questions to the `Google Group <http://groups.google.com/group/django-solr>`_. (overkill?)
+* Find us on the #django irc channel. Our nicks are `screeley` and `jdolan`.
+* `Contact <http://www.screeley.com/contact/>`_ me directly.
+
+Getting Started
+===============
+Read the overview to give you some background on the project, install Django Solr, and run through the tutorial
+
+* :ref:`overview`
+* :ref:`install`
+* :ref:`tutorial`
+
+Code
+====
+References for the inner workings of Django Solr
+
+* :ref:`code-search_document`
+* :ref:`code-connection`
+* :ref:`code-query`
+* :ref:`code-search_results`
+* :ref:`code-facet`
+* :ref:`code-highlighting`
+* :ref:`code-indexing`
+
+
+
+Contents
+========
+To view all of the contents of the documentation.
+
+.. toctree::
+    :maxdepth: 1
+    
+    contents
+    
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

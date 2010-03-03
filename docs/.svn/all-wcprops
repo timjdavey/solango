@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/49/trunk/docs
+END
+tutorial.txt
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/18/trunk/docs/tutorial.txt
+END
+overview.txt
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/16/trunk/docs/overview.txt
+END
+install.txt
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/18/trunk/docs/install.txt
+END
+index.txt
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/43/trunk/docs/index.txt
+END
+fixme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/19/trunk/docs/fixme.txt
+END
+contents.txt
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/12/trunk/docs/contents.txt
+END
+conf.py
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/12/trunk/docs/conf.py
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/12/trunk/docs/Makefile
+END
