@@ -173,7 +173,7 @@ class BaseSearchDocument(object):
         elif self.data_dict:
             self.clean()
             self._transformed = True
-            self.boost = self.get_boost(None)#self.get_model_instance())
+            self.boost = self.get_boost(self.get_model_instance())
         else:
             self.pk_field.value = self.pk_field.make_key(arg[0], arg[1])
     
