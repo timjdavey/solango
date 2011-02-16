@@ -8,6 +8,7 @@ setup(
     author_email='sean@screeley.com',
     url='http://code.google.com/p/django-solr-search/',
     packages=find_packages(),
+    package_data={'': ['conf/*.conf', 'templates/solango/*.html', 'templates/solango/*.xml']},
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
